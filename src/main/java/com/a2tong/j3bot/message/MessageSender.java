@@ -8,6 +8,10 @@ package com.a2tong.j3bot.message;
  */
 public interface MessageSender {
 
+    static MessageSender getInstance(){
+        return new DefaultMessageSender();
+    }
+
     /**
      * 发送消息给好友
      * @param msg 消内容
@@ -21,5 +25,7 @@ public interface MessageSender {
      * @return 发送结果
      */
     MsgResponse sendText2Group(ChatMessage msg);
+
+
 
 }

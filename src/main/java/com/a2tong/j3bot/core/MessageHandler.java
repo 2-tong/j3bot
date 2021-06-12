@@ -1,4 +1,7 @@
-package com.a2tong.j3bot.message;
+package com.a2tong.j3bot.core;
+
+import com.a2tong.j3bot.message.ApiMessage;
+import com.a2tong.j3bot.message.ChatMessage;
 
 /**
  * TODO
