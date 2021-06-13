@@ -19,7 +19,7 @@ public class ChatMessage {
 
     public static enum MSG_TYPE {
         TEXT("text");
-        private String value;
+        private final String value;
 
         MSG_TYPE(String value) {
             this.value = value;
@@ -33,7 +33,7 @@ public class ChatMessage {
 
     public static enum TARGET_TYPE {
         FRIEND("friend"), GROUP("group");
-        private String value;
+        private final String value;
 
         TARGET_TYPE(String value) {
             this.value = value;

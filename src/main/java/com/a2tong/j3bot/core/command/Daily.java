@@ -39,8 +39,7 @@ public class Daily extends CommandHandler {
         cal.setFirstDayOfWeek(Calendar.MONDAY);
         //TODO 星期不对
         DailyResult result = (DailyResult) response.getResult();
-        return "今天是" + format.format(cal.getTime()) + ",星期" +
-                cal.get(Calendar.DAY_OF_WEEK) + "\n" +
+        return "今天是" + format.format(cal.getTime()) + "\n" +
                 "大战：" + result.getDayWar() +
                 "\n战场：" + result.getDayBattle() +
                 "\n阵营：" + result.getDayCamp() +
