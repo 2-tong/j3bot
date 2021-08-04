@@ -4,11 +4,11 @@ import com.a2tong.j3bot.core.CommandHandler;
 import com.a2tong.j3bot.j3api.ApiQuery;
 import com.a2tong.j3bot.j3api.GameApi;
 import com.a2tong.j3bot.message.ApiMessage;
-import com.a2tong.j3bot.message.ChatMessage;
+import com.a2tong.j3bot.message.chat.ChatMessage;
 import com.a2tong.j3bot.core.MessageHandler;
 import com.a2tong.j3bot.message.MessageSender;
-
-import java.util.Properties;
+import com.a2tong.j3bot.message.chat.MSG_TYPE;
+import com.a2tong.j3bot.message.chat.TARGET_TYPE;
 
 /**
  * 同步消息处理器,当api消息为同步获取时调用。
@@ -29,8 +29,8 @@ public class SyncMessageHandler implements MessageHandler {
 
     @Override
     public void handleChatMessage(ChatMessage msg) {
-        if(msg.getMsgType() == ChatMessage.MSG_TYPE.TEXT
-                && msg.getSourceType() == ChatMessage.TARGET_TYPE.GROUP){
+        if(msg.getMsgType() == MSG_TYPE.TEXT
+                && msg.getSender().getTargetType() == TARGET_TYPE.GROUP){
 
                 String text = (String) msg.getMsg();
                 if(!text.startsWith("bot"))
@@ -48,7 +48,7 @@ public class SyncMessageHandler implements MessageHandler {
                 //调用api并等待返回再解析
                 String resultMsg = handler.parsingResult(api.callApi(query));
 
-                messageSender.sendText2Group(ChatMessage.buildMessageForReturn(msg, ChatMessage.MSG_TYPE.TEXT,resultMsg));
+                messageSender.sendText2Group(ChatMessage.buildMessageForReturn(msg.getSender(), MSG_TYPE.TEXT,resultMsg));
         }
     }
 

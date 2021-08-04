@@ -2,6 +2,7 @@ package com.a2tong.j3bot.message;
 
 
 import com.a2tong.j3bot.http.RestClient;
+import com.a2tong.j3bot.message.chat.ChatMessage;
 
 /**
  * TODO 默认消息发送类
@@ -17,8 +18,8 @@ public class DefaultMessageSender implements MessageSender{
 
     @Override
     public MsgResponse sendText2Group(ChatMessage msg) {
-        Message miraiMsg = Message.build(msg.getTarget(), (String) msg.getMsg());
-        MsgResponse response = null;
+        Message miraiMsg = Message.build(msg.getSender().getTarget(), (String) msg.getMsg());
+        MsgResponse response;
         try {
             response = restClient.post("sendGroupMessage",miraiMsg,MsgResponse.class);
         } catch (Exception e) {

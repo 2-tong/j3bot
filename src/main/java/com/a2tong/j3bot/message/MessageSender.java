@@ -1,5 +1,7 @@
 package com.a2tong.j3bot.message;
 
+import com.a2tong.j3bot.message.chat.ChatMessage;
+
 /**
  * 向qq发送消息得接口
  *
@@ -25,7 +27,4 @@ public interface MessageSender {
      * @return 发送结果
      */
     MsgResponse sendText2Group(ChatMessage msg);
-
-
-
 }

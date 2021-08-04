@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.a2tong.j3bot.main</mainClass>
+                            <mainClass>com.a2tong.j3bot.AppMain</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

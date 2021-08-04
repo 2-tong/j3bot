@@ -3,13 +3,9 @@ package com.a2tong.j3bot.core;
 import com.a2tong.j3bot.core.command.Daily;
 import com.a2tong.j3bot.j3api.ApiQuery;
 import com.a2tong.j3bot.j3api.ApiResponse;
-import com.a2tong.j3bot.message.ChatMessage;
-import org.reflections.Reflections;
 
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public abstract class CommandHandler {
 
